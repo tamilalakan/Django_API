@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Success</title>
+	<style type="text/css">
+		.card{
+    border-radius: 4px;
+    background: #fff;
+    margin-left: 10px;
+    margin-top: 10px;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+	</style>
+</head>
+<body>
+<h1 style="color: green;">Success</h1>
+<a href="{% url 'snippet_list' %}" class="btn btn-outline-primary">View in Json<br></a>
+<br>
+<div class="row">
+<br>
+	{% for i in data1%}
+		
+		
+		
+	
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h4 class="card-title"><u>{{i.firstname}} {{i.lastname}}</u></h4>
+        {% for j,k in i.items %}
+        	<p class="card-text">{{j}}: {{k}}</p>
+        {% endfor %}
+        <!-- <a href="#" class="btn btn-primary">View in Json</a> -->
+      </div>
+    </div><br><br>
+  </div>
+  	
+  {% endfor %}
+<!--   <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div> -->
+</div>
+</body>
+</html>
